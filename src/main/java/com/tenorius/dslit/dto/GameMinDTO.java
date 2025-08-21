@@ -1,6 +1,7 @@
 package com.tenorius.dslit.dto;
 
 import com.tenorius.dslit.entities.Game;
+import com.tenorius.dslit.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -23,6 +24,13 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
 	public Long getId() {
 		return id;
 	}
